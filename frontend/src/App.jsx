@@ -1,25 +1,13 @@
-import axios from './api/AxiosConfig';
-import { useEffect } from 'react'
+import React from 'react'
+import MainRoutes from './routes/MainRoutes'
+import Nav from './components/Nav'
 
 const App = () => {
-
-  const getProducts=async ()=>{
-    try{
-      const res=await axios.get("/products")
-      console.log(res);
-      
-    }catch(err){
-      console.log(err);
-      
-    }
-  }
-
-  useEffect(()=>{
-    getProducts()
-  },[])
-  
   return (
-    <div  className='text-5xl'>get products</div>
+    <div className='bg-gray-900 text-white'>
+      <Nav/>
+      <MainRoutes/>
+    </div>
   )
 }
 
